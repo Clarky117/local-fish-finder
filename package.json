@@ -4,7 +4,11 @@
   "description": "This app intends to provide a space where local cichlid breeders can create a profile about themselves and the particular cichlid species that they specialise in. They will be able to write a quick summary about themselves as well as the fish they currently have on offer.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server --ignore client",
+    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Clarky117/local-fish-finder/issues"
   },
-  "homepage": "https://github.com/Clarky117/local-fish-finder#readme"
+  "homepage": "https://github.com/Clarky117/local-fish-finder#readme",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
 }
