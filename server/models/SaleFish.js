@@ -2,6 +2,12 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const saleFishSchema = new Schema({
+    // aligns username to fish sale
+    fishOwnerUsername: {
+        type: String,
+        trim: true,
+    },
+
     fishName: {
         type: String,
         required: true,
