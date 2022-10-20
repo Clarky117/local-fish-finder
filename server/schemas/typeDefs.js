@@ -12,11 +12,12 @@ const typeDefs = gql`
   type SaleFish {
     _id: ID!
     fishName: String
-    price: Number #dollars
-    size: Number #cms
-    quantity: Number
+    username: String
+    price: Int #dollars
+    size: Int #cms
+    quantity: Int
     location: String
-    createdAt: Date
+    createdAt: String
   }
 
   type Auth {
@@ -28,8 +29,8 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
-    me: User
     # sale fish 
+    me: User
     allfish: [SaleFish]
   }
 
@@ -38,11 +39,11 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
 
     # user description
-    addDescription(description: String): User 
+    # addDescription(description: String): User 
 
     # sale fish 
-    addFish(fishName: String!, price: Number!, size: Number!, quantity: Number!, location: String!): SaleFish
-    removeFish(_id: ID): SaleFish
+    addFish(fishname: String!, username: String! price: Int!, size: Int!, quantity: Int!, location: String!): SaleFish
+    removeFish(_id: ID): String
   }
 `;
 

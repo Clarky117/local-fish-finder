@@ -6,11 +6,11 @@ const resolvers = {
 
     Query: {
         // TODO: change populate
-        user: async (parent, { username }) => {
-            return User.findOne({ username }).populate('fishesForSale')
-        },
         users: async () => {
-            return User.find().populate('fishesForSale')
+            return User.find().populate()
+        },
+        user: async (parent, { username }) => {
+            return User.findOne({ username }).populate()
         },
         // userFishSales: async (parent, { username }) => {
         //     const params = username ? { username } : {};
@@ -56,43 +56,41 @@ const resolvers = {
             return { token, user };
         },
 
-        // add description
-        addDescription: async (parent, { description }, context) => {
-            // help
-            if (context.user) {
-                return await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    // unsure
-                    {
-                        description,
-                    },
-                    { new: true }
+        // // add description
+        // addDescription: async (parent, { description }, context) => {
+        //     // help
+        //     if (context.user) {
+        //         return await User.findOneAndUpdate(
+        //             { _id: context.user._id },
+        //             // unsure
+        //             {
+        //                 description,
+        //             },
+        //             { new: true }
 
-                )
-            }
-            throw new AuthenticationError('You need to be logged in!');
+        //         )
+        //     }
+        //     throw new AuthenticationError('You need to be logged in!');
 
-        },
+        // },
 
         // sale fish mutations
-        addFish: async (parent, { fishName, price, size, quantity, location }, context) => {
+        addFish: async (parent, { fishname, price, size, quantity, location }, context) => {
             if (context.user) {
                 const fish = await SaleFish.create({
                     // bit lost on what goes here?
-
                     fishName,
                     price,
                     size,
                     quantity,
                     location,
-
                     // fishOwnerUsername: context.user.username,
 
                 });
 
                 await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { userFishSales: SaleFish._id }, }, { new: true }
+                    { $addToSet: { fishesForSale: SaleFish._id }, }, { new: true }
                 );
 
                 return fish;
@@ -117,11 +115,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-
     }
-
-
-
-
-
 }
+
+module.exports = resolvers;
