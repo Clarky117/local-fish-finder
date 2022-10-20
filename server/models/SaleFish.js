@@ -3,7 +3,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const saleFishSchema = new Schema({
     // aligns username to fish sale
-    fishName: {
+    fishname: {
         type: String,
         required: true,
         trim: true,

@@ -1,28 +1,32 @@
 import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
+
 
 export default function Header() {
   return (
 
-    <header class="header">
+    <header className="header">
 
         {/* # is placeholder, update to work in react router */}
 
-        <div class="logo">
+        <div className="logo">
             {/* find fish image, resize */}
             {/* <img src="" alt="" /> */}
         </div>
 
         <div>
-            <a href="#MyProfile">My Profile</a>
-            <a href="#SearchListings">Search Listings</a>
+            {/* <a href='/'>Home</a> */}
+            <Link to="/">Home</Link>
         </div>
 
         <div>
-            <a href="#Login">Login</a>
-            <a href="#CreateAccount">Create Account</a>
-        </div>
+            {/* <a href="/login">Login</a> */}
+            <Link to='/login'>Login</Link>
+            {/* <a href="/register">Create Account</a> */}
+            <Link to='/register'>Register</Link>
 
+        </div>
 
     </header>
 

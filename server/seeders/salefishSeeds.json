@@ -1,6 +1,6 @@
 [
     {
-        "fishName": "Gold Dust",
+        "fishname": "Gold Dust",
         "username": "Clarky",
         "price": 50,
         "size": 5,
@@ -8,7 +8,7 @@
         "location": "Joondalup"
     },
     {
-        "fishName": "Mbuna",
+        "fishname": "Mbuna",
         "username": "Clarky",
         "price": 5,
         "size": 4,
@@ -16,7 +16,7 @@
         "location": "Joondalup"
     },
     {
-        "fishName": "Frontosa",
+        "fishname": "Frontosa",
         "username": "Clarky",
         "price": 75,
         "size": 5,
@@ -24,7 +24,7 @@
         "location": "NOR"
     },
     {
-        "fishName": "Ellioti",
+        "fishname": "Ellioti",
         "username": "Clarky",
         "price": 20,
         "size": 8,
@@ -32,7 +32,7 @@
         "location": "NOR"
     },
     {
-        "fishName": "Bristlenose Pleco",
+        "fishname": "Bristlenose Pleco",
         "username": "Clarky",
         "price": 10,
         "size": 6,
@@ -40,7 +40,7 @@
         "location": "SOR"
     },
     {
-        "fishName": "Trimac",
+        "fishname": "Trimac",
         "username": "Clarky",
         "price": 40,
         "size": 10,
@@ -48,7 +48,7 @@
         "location": "SOR"
     },
     {
-        "fishName": "Blood Parrot",
+        "fishname": "Blood Parrot",
         "username": "Clarky",
         "price": 80,
         "size": 10,
@@ -56,7 +56,7 @@
         "location": "NOR"
     },
     {
-        "fishName": "Boesemani Rainbow",
+        "fishname": "Boesemani Rainbow",
         "username": "Clarky",
         "price": 50,
         "size": 10,
@@ -64,7 +64,7 @@
         "location": "NOR"
     },
     {
-        "fishName": "Peacock",
+        "fishname": "Peacock",
         "username": "Clarky",
         "price": 20,
         "size": 8,

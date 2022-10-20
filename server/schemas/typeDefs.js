@@ -11,7 +11,7 @@ const typeDefs = gql`
 
   type SaleFish {
     _id: ID!
-    fishName: String
+    fishname: String
     username: String
     price: Int #dollars
     size: Int #cms
@@ -21,7 +21,6 @@ const typeDefs = gql`
   }
 
   type Auth {
-    # is token ID or String?
     token: ID!
     user: User
   }
@@ -29,7 +28,6 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
-    # sale fish 
     me: User
     allfish: [SaleFish]
   }
@@ -37,11 +35,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-
-    # user description
-    # addDescription(description: String): User 
-
-    # sale fish 
+    # addDescription(description: String): User
     addFish(fishname: String!, username: String! price: Int!, size: Int!, quantity: Int!, location: String!): SaleFish
     removeFish(_id: ID): String
   }
