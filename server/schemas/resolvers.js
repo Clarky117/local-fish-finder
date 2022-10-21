@@ -26,8 +26,9 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+        // figure out how to sort newest to oldest
         allfish: async () => {
-            return SaleFish.find().populate()
+            return SaleFish.find().sort({ createdAt: -1 });
         }
     },
 
@@ -85,14 +86,12 @@ const resolvers = {
                     size,
                     quantity,
                     location,
-                    // fishOwnerUsername: context.user.username,
-
                 });
 
-                await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { fishesForSale: SaleFish._id }, }, { new: true }
-                );
+                // await User.findOneAndUpdate(
+                //     { _id: context.user._id },
+                //     { $addToSet: { fishesForSale: SaleFish._id }, }, { new: true }
+                // );
 
                 return fish;
             }

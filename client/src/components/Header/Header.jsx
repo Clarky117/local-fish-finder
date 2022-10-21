@@ -22,7 +22,8 @@ export default function Header() {
               <Link to="/">Home</Link>
             </div>
             <Link className="" to="/me">
-              {Auth.getProfile().data.username}'s profile
+              Sell Fish
+              {/* {Auth.getProfile().data.username}'s profile */}
             </Link>
             <button className="" onClick={logout}>
               Logout
@@ -30,23 +31,23 @@ export default function Header() {
           </>
         ) : (
           <>
-          <div>
-
-            <div>
-              <Link to="/">Home</Link>
-            </div>
-
             <div>
 
-            <Link className="" to="/login">
-              Login
-            </Link>
-            <Link className="" to="/register">
-              Register
-            </Link>
-            </div>
+              <div>
+                <Link to="/">Home</Link>
+              </div>
 
-          </div>
+              <div>
+
+                <Link className="" to="/login">
+                  Login
+                </Link>
+                <Link className="" to="/register">
+                  Register
+                </Link>
+              </div>
+
+            </div>
           </>
         )}
       </div>
