@@ -75,11 +75,12 @@ const resolvers = {
         // },
 
         // sale fish mutations
-        addFish: async (parent, { fishname, price, size, quantity, location }, context) => {
+        addFish: async (parent, { fishname, username, price, size, quantity, location }, context) => {
             if (context.user) {
                 const fish = await SaleFish.create({
                     // bit lost on what goes here?
-                    fishName,
+                    fishname,
+                    username,
                     price,
                     size,
                     quantity,

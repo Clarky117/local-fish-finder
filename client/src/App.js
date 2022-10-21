@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import Header from './components/Header/Header';
+import AddFish from './pages/AddFish';
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -43,6 +44,10 @@ function App() {
           <Route
             path="/register"
             element={<Register />}
+          />
+          <Route
+            path="/me"
+            element={<AddFish />}
           />
         </Routes>
 

@@ -1,33 +1,55 @@
 import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
 
 
 export default function Header() {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
 
     <header className="header">
 
-        {/* # is placeholder, update to work in react router */}
+      {/* # is placeholder, update to work in react router */}
 
-        <div className="logo">
-            {/* find fish image, resize */}
-            {/* <img src="" alt="" /> */}
-        </div>
+      <div>
+        {Auth.loggedIn() ? (
+          <>
+            <div>
+              <Link to="/">Home</Link>
+            </div>
+            <Link className="" to="/me">
+              {Auth.getProfile().data.username}'s profile
+            </Link>
+            <button className="" onClick={logout}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+          <div>
 
-        <div>
-            {/* <a href='/'>Home</a> */}
-            <Link to="/">Home</Link>
-        </div>
+            <div>
+              <Link to="/">Home</Link>
+            </div>
 
-        <div>
-            {/* <a href="/login">Login</a> */}
-            <Link to='/login'>Login</Link>
-            {/* <a href="/register">Create Account</a> */}
-            <Link to='/register'>Register</Link>
+            <div>
 
-        </div>
+            <Link className="" to="/login">
+              Login
+            </Link>
+            <Link className="" to="/register">
+              Register
+            </Link>
+            </div>
 
+          </div>
+          </>
+        )}
+      </div>
     </header>
 
   )

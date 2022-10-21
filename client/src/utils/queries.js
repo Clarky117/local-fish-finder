@@ -14,3 +14,22 @@ export const GET_ALL_FISH_QUERY = gql`
     }
     }
 `
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      fishesForSale{
+        _id
+        fishname
+        username
+        price
+        size
+        quantity
+        location
+        createdAt
+      }
+    }
+  }`
