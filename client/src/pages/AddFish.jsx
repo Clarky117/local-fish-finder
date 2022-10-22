@@ -10,9 +10,9 @@ export default function AddFish() {
     const [inputField, setInputField] = useState({
         fishname: '',
         username: '',
-        price: '',
-        size: '',
-        quantity: '',
+        price: 0,
+        size: 0,
+        quantity: 0,
         location: '',
     })
 
@@ -20,11 +20,11 @@ export default function AddFish() {
 
     const handleChange = (event) => {
 
-        const { name, value } = event.target;
+        const { name, value, type } = event.target;
 
         setInputField({
             ...inputField,
-            [name]: value,
+            [name]: type === 'number' ? Number(value) : value,
         });
     }
 
