@@ -10,9 +10,9 @@ export default function AddFish() {
     const [inputField, setInputField] = useState({
         fishname: '',
         username: '',
-        price: 0,
-        size: 0,
-        quantity: 0,
+        price: '',
+        size: '',
+        quantity: '',
         location: '',
     })
 
@@ -38,41 +38,53 @@ export default function AddFish() {
     }
 
     return (
-        <div>
-            <h1>Add Fish</h1>
+        <div className='register-main'>
 
             {Auth.loggedIn() ? (
                 <>
-                    {/* <form onSubmit={onSubmit}> */}
-                    <form>
+                    <div className="addfish-container">
 
-                        <input type="text" name='fishname' placeholder='Fish Name'
-                            onChange={handleChange} value={inputField.fishname} />
+                        <form className='register-form'>
+                            <h3 className="register-title-addfish">Add Fish</h3>
 
-                        <input type="text" name='username' placeholder='User Name'
-                            onChange={handleChange} value={inputField.username} />
+                            <label for="fishname">Type of Fish</label>
+                            <input className="form-input-addfish" type="text" name='fishname' placeholder='Fish Name'
+                                onChange={handleChange} value={inputField.fishname} />
 
-                        <input type="number" name='price' placeholder='Price'
-                            onChange={handleChange} value={inputField.price} />
+                            <label for="username">Your Username</label>
+                            <input className="form-input-addfish" type="text" name='username' placeholder='User Name'
+                                onChange={handleChange} value={inputField.username} />
 
-                        <input type="number" name='size' placeholder='Size'
-                            onChange={handleChange} value={inputField.size} />
+                            <label for="price">Price</label>
+                            <input className="form-input-addfish" type="number" name='price' placeholder='Price'
+                                onChange={handleChange} value={inputField.price} />
 
-                        <input type="number" name='quantity' placeholder='Quantity'
-                            onChange={handleChange} value={inputField.quantity} />
+                            <label for="size">Size in cms</label>
+                            <input className="form-input-addfish" type="number" name='size' placeholder='Size'
+                                onChange={handleChange} value={inputField.size} />
 
-                        <input type="text" name='location' placeholder='Location'
-                            onChange={handleChange} value={inputField.location} />
+                            <label for="quantity">Quantity</label>
+                            <input className="form-input-addfish" type="number" name='quantity' placeholder='Quantity'
+                                onChange={handleChange} value={inputField.quantity} />
 
-                        <button type="button" onClick={handleFormSubmit}>Add Fish</button>
+                            <label for="location">Suburb</label>
+                            <input className="form-input-addfish" type="text" name='location' placeholder='Location'
+                                onChange={handleChange} value={inputField.location} />
 
-                    </form>
+                            <button className="register-btn" style={{ cursor: 'pointer' }} type="button"
+                                onClick={handleFormSubmit}>Add Fish</button>
+
+                        </form>
+
+                    </div>
                 </>
             ) : (
-                <p>
+                <div className='danger-container'>
+                <h2>
                     You need to be logged in to sell some fish. Please{' '}
-                    <Link to="/login">login</Link> or <Link to="/register">signup.</Link>
-                </p>
+                    <Link className='dc-link' to="/login">login</Link> or <Link className='dc-link' to="/register">signup.</Link>
+                </h2>
+                </div>
             )}
         </div>
 

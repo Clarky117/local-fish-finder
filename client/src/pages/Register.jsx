@@ -42,38 +42,40 @@ const Login = () => {
     <main className="register-main">
 
       {data ? (
-        <p>
-          Success! Redirecting back to{' '}
-          <Link to="/">homepage.</Link>
-        </p>
+        <div className='success-container'>
+          <h3>
+            Success! Redirecting back to{' '}
+            <Link to="/">home.</Link>
+          </h3>
+        </div>
       ) : (
 
         <div className="register-container">
 
           <form className='register-form' onSubmit={handleFormSubmit}>
-            <h4 className="register-title">Sign Up</h4>
+            <h3 className="register-title">Sign Up</h3>
 
-              <label for="username">Name: </label>
-              <input
-                className="form-input"
-                placeholder="Your Username"
-                name="username"
-                type="text"
-                value={formState.name}
-                onChange={handleChange}
-              />
+            <label for="username">Name</label>
+            <input
+              className="form-input"
+              placeholder="Your Username"
+              name="username"
+              type="text"
+              value={formState.name}
+              onChange={handleChange}
+            />
 
-              <label for="email">Email: </label>
-              <input
-                className="form-input"
-                placeholder="Your Email"
-                name="email"
-                type="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
+            <label for="email">Email</label>
+            <input
+              className="form-input"
+              placeholder="Your Email"
+              name="email"
+              type="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
 
-            <label for="username">Password: </label>
+            <label for="username">Password</label>
             <input
               className="form-input"
               placeholder="******"
@@ -91,14 +93,20 @@ const Login = () => {
             </button>
           </form>
 
+          {error && (
+            <div className="error-message">
+              {error.message}
+            </div>
+          )}
+
         </div>
       )}
 
-      {error && (
-        <div className="">
+      {/* {error && (
+        <div className="error-message">
           {error.message}
         </div>
-      )}
+      )} */}
 
     </main>
   );

@@ -1,10 +1,24 @@
+.error-message{
+    text-align: center;
+    padding-top: 1em;
+    color: red;
+    font-weight: bolder;
+}
+
+.success-container{
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 50em;
+    font-size: var(--fs-h2);
+}
+
 /* register */
 
 .register-title{
     text-align: center;
-    padding-top: 0em;
-    padding-bottom: 1em;
-    font-size: larger;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    /* font-size: larger; */
 }
 
 .register-container {
@@ -78,3 +92,58 @@
     background-size: cover;
     /* background-blend-mode: soft-light; */
 }
+
+/* add fish */
+
+.addfish-container {
+    margin:auto;
+    width: 100%;
+    height: 90vh;
+    /* add background image */
+    background: var(--clr-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url(./underwater-backdrop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-blend-mode: soft-light; */
+}
+
+.form-input-addfish{
+    margin-bottom: 1em;
+}
+
+.register-title-addfish{
+    text-align: center;
+    padding-top: 0em;
+    padding-bottom: 1em;
+    /* font-size: larger; */
+}
+
+.danger-container{
+    margin:auto;
+    width: 100%;
+    height: 90vh;
+    /* add background image */
+    background: var(--clr-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url(./jellyfish-backdrop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-blend-mode: soft-light; */
+}
+
+.dc-link{
+    text-decoration: none;
+    color: blue;
+}
+
+/* home */
+

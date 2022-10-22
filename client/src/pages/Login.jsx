@@ -43,55 +43,64 @@ const Login = (props) => {
 
   return (
     <main className="register-main">
-          
-            {data ? (
-              <p>
-                Success! Redirecting back to{' '}
-                <Link to="/">home.</Link>
-              </p>
-            ) : (
-              
-              <div className="login-container">
 
-              <form className='register-form' onSubmit={handleFormSubmit}>
-                <h4 className="register-title">Login</h4>
+      {data ? (
+        <div className='success-container'>
+          <p>
+            Success! Redirecting back to{' '}
+            <Link to="/">home.</Link>
+          </p>
+        </div>
+      ) : (
 
-                <label for="email">Email: </label>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
+        <div className="login-container">
 
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="register-btn"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
+          <form className='register-form' onSubmit={handleFormSubmit}>
+            <h3 className="register-title">Login</h3>
 
-              </div>
-            )}
+            <label for="email">Email</label>
+            <input
+              className="form-input"
+              placeholder="Your email"
+              name="email"
+              type="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
 
-            {error && (
-              <div className="">
+            <label for="email">Password</label>
+            <input
+              className="form-input"
+              placeholder="******"
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            <button
+              className="register-btn"
+              style={{ cursor: 'pointer' }}
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+
+          {error && (
+            <div className="error-message">
+              {error.message}
+            </div>
+          )}
+
+        </div>
+      )}
+
+      {/* {error && (
+              <div className="error-message">
                 {error.message}
               </div>
-            )}
-      
+            )} */}
+
     </main>
   );
 };
