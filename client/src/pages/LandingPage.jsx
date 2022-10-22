@@ -30,18 +30,22 @@ function LandingPage() {
     }
 
     return (
-        <div>
-            <h1>Home Page - Recent Listings</h1>
+        <div className='listings-container'>
 
-            <div>
+            <h2 className='home-title'>Recent Listings</h2>
+
+            <div className='mapped-div'>
                 {fish.map((val) => {
-                    return <div key={val._id} className="for-sale-container">
-                        <h1> {val.fishname} </h1>
-                        <h2> {val.username} </h2>
-                        <h2> {val.price} </h2>
-                        <h2> {val.size} </h2>
-                        <h2> {val.quantity} </h2>
-                        <h2> {val.location} </h2>
+                    return <div key={val._id} className="for-sale-card">
+                        <h2> {val.fishname} </h2>
+                        {/* placeholder image here */}
+                        <h3> From - {val.username} </h3>
+                        <h3> ${val.price} </h3>
+                        <h3> {val.size}cms </h3>
+                        <h3> {val.quantity} of </h3>
+                        <h3> Located: {val.location} </h3>
+                        <h3> Contact - </h3>
+
                     </div>
                 })}
             </div>

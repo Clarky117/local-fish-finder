@@ -145,5 +145,43 @@
     color: blue;
 }
 
-/* home */
+/* landing page - fish sales */
+
+.listings-container{
+    text-align: center;
+    /* display: flex; */
+    background-image: url(./seawater-backdrop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+
+}
+
+.mapped-div{
+    display: flex;
+    flex-wrap: wrap;
+    /* min-height: 100vh; */
+    justify-content: center;
+    align-items: center;
+}
+
+.home-title{
+    padding-top: 1em;
+    margin-bottom: 0.6em;
+}
+
+.for-sale-card{
+    padding: 1em;
+    /* min-width: 0; */
+    min-width: 45vw;
+    max-width: 45vw;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin: 1em;
+    background: var(--clr-light);
+    opacity: 0.8;
+    align-items: center;
+}
 
