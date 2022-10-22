@@ -2,4 +2,40 @@
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+    align-items: center;
 }
+
+.logo-small {
+    /* max-height: 50px; */
+    max-width: 150px;
+    padding-top: 1em;
+}
+
+.header-font{
+    font-weight: var(--fw-bold);
+    font-size: 2em;
+    text-decoration: none;
+    color: var(--clr-dark);
+}
+
+.header-font:hover{
+    color: var(--clr-accent);
+}
+
+.header-btn{
+    display: inline-block;
+    padding: 0.2em 2em; 
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    font-weight: var(--fw-bold);
+    border-radius: 0.5em;
+    transition: transform 300ms ease-in-out;
+}
+
+.header-btn:hover {
+    transform: scale(1.1);
+  }

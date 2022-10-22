@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --ff-primary: 'Source Sans Pro', sans-serif;
+  --ff-secondary: 'Source Code Pro', monospace;
+
+  --fw-reg: 300;
+  --fw-bold: 700;
+
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  --clr-accent: #66b3ba;
+  /* --clr-accent: #42b2df; */
+  /* --clr-accent: #16e0bd; */
+  /* --clr-accent: #0353a4; */
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.5),
+        0.125em 0.125em 0.25em rgba(0,0,0,0.25)
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 900px) {
+  :root {
+      --fs-h1: 4.5rem;
+      --fs-h2: 3.75rem;
+      --fs-h3: 1.5rem;
+      --fs-body: 1.125rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* general styles */
+
+html {
+  scroll-behavior: smooth;
 }
 
-.App-link {
-  color: #61dafb;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+strong { font-weight: var(--fw-bold); }
+
+
+:focus {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
 }
+
+body {
+  margin: 0;
+}
+
+/* button */
+
+/* .btn {
+  display: inline-block;
+  padding: 0.5em 2.5em;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--fw-bold);
+  transition: transform 200ms ease-in-out;
+} */
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* typography */
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }

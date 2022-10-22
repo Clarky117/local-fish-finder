@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import './Pages.css';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
@@ -40,60 +39,67 @@ const Login = () => {
   };
 
   return (
-    <main className="">
-      <div className="">
-        <div className="">
-          <h4 className="">Sign Up</h4>
-          <div className="">
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your Username"
-                  name="username"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your Email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className=""
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            )}
+    <main className="register-main">
 
-            {error && (
-              <div className="">
-                {error.message}
-              </div>
-            )}
-          </div>
+      {data ? (
+        <p>
+          Success! Redirecting back to{' '}
+          <Link to="/">homepage.</Link>
+        </p>
+      ) : (
+
+        <div className="register-container">
+
+          <form className='register-form' onSubmit={handleFormSubmit}>
+            <h4 className="register-title">Sign Up</h4>
+
+              <label for="username">Name: </label>
+              <input
+                className="form-input"
+                placeholder="Your Username"
+                name="username"
+                type="text"
+                value={formState.name}
+                onChange={handleChange}
+              />
+
+              <label for="email">Email: </label>
+              <input
+                className="form-input"
+                placeholder="Your Email"
+                name="email"
+                type="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+
+            <label for="username">Password: </label>
+            <input
+              className="form-input"
+              placeholder="******"
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            <button
+              className="register-btn"
+              style={{ cursor: 'pointer' }}
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+
         </div>
-      </div>
+      )}
+
+      {error && (
+        <div className="">
+          {error.message}
+        </div>
+      )}
+
     </main>
   );
 };

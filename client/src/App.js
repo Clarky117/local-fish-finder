@@ -3,6 +3,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import AddFish from './pages/AddFish';
 import LandingPage from './pages/LandingPage';
@@ -50,7 +51,7 @@ function App() {
             element={<AddFish />}
           />
         </Routes>
-
+        <Footer />
       </Router>
     </div>
   );

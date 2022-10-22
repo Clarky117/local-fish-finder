@@ -1,13 +1,6 @@
-// import React from 'react'
-
-// export default function Login() {
-//   return (
-//     <div>Login</div>
-//   )
-// }
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Pages.css';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
@@ -49,18 +42,21 @@ const Login = (props) => {
   };
 
   return (
-    <main className="">
-      <div className="">
-        <div className="">
-          <h4 className="">Login</h4>
-          <div className="">
+    <main className="register-main">
+          
             {data ? (
               <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                Success! Redirecting back to{' '}
+                <Link to="/">home.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              
+              <div className="login-container">
+
+              <form className='register-form' onSubmit={handleFormSubmit}>
+                <h4 className="register-title">Login</h4>
+
+                <label for="email">Email: </label>
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -69,6 +65,7 @@ const Login = (props) => {
                   value={formState.email}
                   onChange={handleChange}
                 />
+
                 <input
                   className="form-input"
                   placeholder="******"
@@ -78,13 +75,15 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className=""
+                  className="register-btn"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
                   Submit
                 </button>
               </form>
+
+              </div>
             )}
 
             {error && (
@@ -92,9 +91,7 @@ const Login = (props) => {
                 {error.message}
               </div>
             )}
-          </div>
-        </div>
-      </div>
+      
     </main>
   );
 };
