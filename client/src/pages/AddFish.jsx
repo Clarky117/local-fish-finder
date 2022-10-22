@@ -47,27 +47,27 @@ export default function AddFish() {
                         <form className='register-form'>
                             <h3 className="register-title-addfish">Add Fish</h3>
 
-                            <label for="fishname">Type of Fish</label>
+                            <label htmlFor="fishname">Type of Fish</label>
                             <input className="form-input-addfish" type="text" name='fishname' placeholder='Fish Name'
                                 onChange={handleChange} value={inputField.fishname} />
 
-                            <label for="username">Your Username</label>
+                            <label htmlFor="username">Your Username</label>
                             <input className="form-input-addfish" type="text" name='username' placeholder='User Name'
                                 onChange={handleChange} value={inputField.username} />
 
-                            <label for="price">Price</label>
+                            <label htmlFor="price">Price</label>
                             <input className="form-input-addfish" type="number" name='price' placeholder='Price'
                                 onChange={handleChange} value={inputField.price} />
 
-                            <label for="size">Size in cms</label>
+                            <label htmlFor="size">Size in cms</label>
                             <input className="form-input-addfish" type="number" name='size' placeholder='Size'
                                 onChange={handleChange} value={inputField.size} />
 
-                            <label for="quantity">Quantity</label>
+                            <label htmlFor="quantity">Quantity</label>
                             <input className="form-input-addfish" type="number" name='quantity' placeholder='Quantity'
                                 onChange={handleChange} value={inputField.quantity} />
 
-                            <label for="location">Suburb</label>
+                            <label htmlFor="location">Suburb</label>
                             <input className="form-input-addfish" type="text" name='location' placeholder='Location'
                                 onChange={handleChange} value={inputField.location} />
 

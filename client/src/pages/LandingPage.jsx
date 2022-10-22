@@ -18,9 +18,10 @@ function LandingPage() {
     }, [data])
 
     if (loading) {
-        return <div>
+
+        return <div className='success-container'>
             <h1>Loading...</h1>
-            <h1>Figuring shit out!!!</h1>
+            <h1>I got this!</h1>
         </div>
     }
 

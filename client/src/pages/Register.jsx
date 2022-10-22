@@ -55,7 +55,7 @@ const Login = () => {
           <form className='register-form' onSubmit={handleFormSubmit}>
             <h3 className="register-title">Sign Up</h3>
 
-            <label for="username">Name</label>
+            <label htmlFor="username">Name</label>
             <input
               className="form-input"
               placeholder="Your Username"
@@ -65,7 +65,7 @@ const Login = () => {
               onChange={handleChange}
             />
 
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               className="form-input"
               placeholder="Your Email"
@@ -75,7 +75,7 @@ const Login = () => {
               onChange={handleChange}
             />
 
-            <label for="username">Password</label>
+            <label htmlFor="username">Password</label>
             <input
               className="form-input"
               placeholder="******"

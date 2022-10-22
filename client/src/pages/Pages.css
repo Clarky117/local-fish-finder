@@ -7,7 +7,7 @@
 
 .success-container{
     text-align: center;
-    padding-top: 2em;
+    padding-top: em;
     padding-bottom: 50em;
     font-size: var(--fs-h2);
 }
