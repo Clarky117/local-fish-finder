@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import './Pages.css';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+// import { useNavigate } from 'react-router-dom';
 
 import Auth from '../utils/auth';
 
 const Login = (props) => {
+  // const navigate = useNavigate();
+
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
@@ -25,11 +28,13 @@ const Login = (props) => {
     event.preventDefault();
     console.log(formState);
     try {
+
       const { data } = await login({
         variables: { ...formState },
       });
 
       Auth.login(data.login.token);
+
     } catch (e) {
       console.error(e);
     }
@@ -39,6 +44,9 @@ const Login = (props) => {
       email: '',
       password: '',
     });
+
+    // navigate('/fish')
+
   };
 
   return (
@@ -47,8 +55,8 @@ const Login = (props) => {
       {data ? (
         <div className='success-container'>
           <p>
-            Success! Redirecting back to{' '}
-            <Link to="/">home.</Link>
+            Success! Redirecting to some{' '}
+            <Link to="/fish">home.</Link>
           </p>
         </div>
       ) : (

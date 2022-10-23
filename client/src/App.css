@@ -42,10 +42,10 @@ html {
   scroll-behavior: smooth;
 }
 
-img {
+/* img {
   display: block;
   max-width: 100%;
-}
+} */
 
 strong { font-weight: var(--fw-bold); }
 

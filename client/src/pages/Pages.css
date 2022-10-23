@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: url(./bubbles-backdrop.jpg);
+    background-image: url(./nature-backdrop.jpg);
     background-size: cover;
     /* background-blend-mode: soft-light; */
 }
@@ -169,6 +169,8 @@
 .home-title{
     padding-top: 1em;
     margin-bottom: 0.6em;
+    font-family: var(--ff-secondary);
+    color: var(--clr-dark);
 }
 
 .for-sale-card{
@@ -183,5 +185,20 @@
     background: var(--clr-light);
     opacity: 0.8;
     align-items: center;
+    font-family: var(--ff-primary);
+    color: var(--clr-dark);
+    justify-content: center;
+
+}
+
+.img-pic{
+    justify-content: center;
+    margin-top: 0.3em;
+    max-width: 40vw;
+    border-radius: 3px;
+}
+
+.fsp{
+    margin-top: 0.1em;
 }
 

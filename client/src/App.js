@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import Home from './components/Home/Home';
 import AddFish from './pages/AddFish';
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
@@ -36,7 +37,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<LandingPage />}
+            element={<Home />}
           />
           <Route
             path="/login"
@@ -47,8 +48,12 @@ function App() {
             element={<Register />}
           />
           <Route
-            path="/me"
+            path="/addfish"
             element={<AddFish />}
+          />
+          <Route
+            path="/fish"
+            element={<LandingPage />}
           />
         </Routes>
         <Footer />

@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import { GET_ALL_FISH_QUERY } from '../utils/queries';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import fishPic from './fishes-display.jpg'
 
 
 function LandingPage() {
@@ -37,14 +38,15 @@ function LandingPage() {
             <div className='mapped-div'>
                 {fish.map((val) => {
                     return <div key={val._id} className="for-sale-card">
-                        <h2> {val.fishname} </h2>
+                        <h2 className='fsp'> {val.fishname} </h2>
                         {/* placeholder image here */}
-                        <h3> From - {val.username} </h3>
-                        <h3> ${val.price} </h3>
-                        <h3> {val.size}cms </h3>
-                        <h3> {val.quantity} of </h3>
-                        <h3> Located: {val.location} </h3>
-                        <h3> Contact - </h3>
+                        <img src={fishPic} alt='nice looking fish' className='img-pic' />
+                        <h3 className='fsp'> From - {val.username} </h3>
+                        <h3 className='fsp'> ${val.price} </h3>
+                        <h3 className='fsp'> {val.size}cms </h3>
+                        <h3 className='fsp'> {val.quantity} of </h3>
+                        <h3 className='fsp'> Located: {val.location} </h3>
+                        <h3 className='fsp'> Contact - </h3>
 
                     </div>
                 })}

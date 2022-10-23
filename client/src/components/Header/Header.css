@@ -14,8 +14,9 @@
 }
 
 .header-font{
+    font-family: var(--ff-primary);
     font-weight: var(--fw-bold);
-    font-size: 2em;
+    /* font-size: 3em; */
     text-decoration: none;
     color: var(--clr-dark);
 }
@@ -34,8 +35,27 @@
     font-weight: var(--fw-bold);
     border-radius: 0.5em;
     transition: transform 300ms ease-in-out;
+    font-family: var(--ff-primary);
+}
+
+@media (max-width: 630px) {
+    .header-btn{
+        padding: 0.2em 1em;
+        align-items: center;
+    }
 }
 
 .header-btn:hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 600px) {
+     /* .small-font{
+        font-size: 1.5em;
+    } */
+
+    .logo{
+        display: none;
+    }
+
   }
