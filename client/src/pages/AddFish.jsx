@@ -35,6 +35,9 @@ export default function AddFish() {
         createFish({
             variables: inputField
         })
+
+        window.location.assign('/fish');
+
     }
 
     return (

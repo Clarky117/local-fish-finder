@@ -28,20 +28,20 @@ export default function Header() {
 
       {Auth.loggedIn() ? (
         <>
-          <div>
+          {/* <div> */}
             <Link className='header-font' to="/"><h2 className='small-font'>Home</h2></Link>
-          </div>
+          {/* </div> */}
 
-          <div>
+          {/* <div> */}
             <Link className='header-font' to="/fish"><h2 className='small-font'>Fish</h2></Link>
-          </div>
+          {/* </div> */}
 
-          <div>
+          {/* <div> */}
             <Link className='header-font' to="/addfish">
               <h2 className='small-font'>Sell Fish</h2>
               {/* {Auth.getProfile().data.username}'s profile */}
             </Link>
-          </div>
+          {/* </div> */}
 
           <button className="header-btn" onClick={logout}>
             Logout
@@ -49,17 +49,17 @@ export default function Header() {
         </>
       ) : (
         <>
-          <div>
+          {/* <div> */}
             <Link className='header-font' to="/"><h2 className='small-font'>Home</h2></Link>
-          </div>
+          {/* </div> */}
 
-          <div>
+          {/* <div> */}
             <Link className='header-font' to="/fish"><h2 className='small-font'>Fish</h2></Link>
-          </div>
+          {/* </div> */}
 
-          <div>
+          {/* <div> */}
             <Link className="header-font" to="/login"><h2 className='small-font'>Login</h2></Link>
-          </div>
+          {/* </div> */}
 
 
           <div>

@@ -5,6 +5,7 @@
     background-blend-mode: soft-light;
     color: var(--clr-light);
     text-align: center;
+    min-height: 80vh;
 }
 
 .services {
