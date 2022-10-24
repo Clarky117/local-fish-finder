@@ -36,23 +36,23 @@ function App() {
         <Header />
         <Routes>
           <Route
-            path="/"
+            exact path="/"
             element={<Home />}
           />
           <Route
-            path="/login"
+            exact path="/login"
             element={<Login />}
           />
           <Route
-            path="/register"
+            exact path="/register"
             element={<Register />}
           />
           <Route
-            path="/addfish"
+            exact path="/addfish"
             element={<AddFish />}
           />
           <Route
-            path="/fish"
+            exact path="/fish"
             element={<LandingPage />}
           />
         </Routes>
